@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LOGIN | EPIC-MAIL</title>
+<title>RESET | EPIC-MAIL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -14,26 +14,27 @@
         </div>
     </header>
     <nav id="navbar">
-        <ul> 
-            <li><a class="active" href="#home">LOGIN</a></li>
-            <li><a href="register.html">REGISTER</a></li>
+        <ul>
+            <li><a class="active" href="#home">RESET</a></li>
+            <li><a href="#news">NEWS</a></li>
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="#about">ABOUT</a></li>
         </ul>
     </nav>
-    <div class="login_div">
-            <form id="login_form">
+    <div class="reset_div">
+            <img src="images/reset.png">
+            <form id="reset_form">
                 <label>Email:</label>
-                <input type="email" name="email" placeholder="Enter your email...">
-                <label>Password:</label>
+                <input type="email" name="email" placeholder="Email...">
+                <label>New Password:</label>
                 <input type="password" name="password" placeholder="Password...">
-                <input type="submit" value="Submit">
-                <p>Forgot password?<a href="reset.html" class="forgot_link"> Reset</a></p>
+                <label>Confirm Password:</label>
+                <input type="password" name="password" placeholder="Password...">
+                <input type="reset" value="Submit">
             </form>
     </div>
     <footer class="footer-container">
         <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
     </footer>
-
 </body>
 </html>

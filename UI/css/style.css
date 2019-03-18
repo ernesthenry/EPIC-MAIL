@@ -173,3 +173,48 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
   }
+  #home_nav{
+    margin-bottom: 100px;
+}
+#home_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+  }
+  
+  #home_nav li {
+    float: left;
+  }
+  
+  #home_nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  #home_nav li a:hover {
+    background-color: #111;
+  }
+
+  #home_nav .active{
+    background-color: #4CAF50;
+  }
+  #home_nav .create{
+    background-color:red;
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }

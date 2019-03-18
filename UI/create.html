@@ -13,16 +13,16 @@
             <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
         </div>
     </header>
-    <nav id="home_nav"></nav>
-        <h3 class="group-title">Groups</h3>
-        <ul> 
-            <li><a class="active" href="#back">BACK</a></li>
-            <li><a href="#" class="create">CREATE</a></li>
-            <li><a href="#contact">CANCEL</a></li>
-        </u>
+        <nav id="navbar">
+            <ul> 
+                <li><a class="active" href="#home">BACK</a></li>
+                <li><a href="#" class="create">CREATE</a></li>
+                <li><a href="#contact">CANCEL</a></li>
+            </ul>
+        </nav>
         <div class="group-container">
-            <form>
-                <label><h3>Group name:</h3></label>
+            <form id="group-container_form">
+                <label>Group name:</label>
                 <input type="text" maxlength="15px">
                 <label>Group email address:</label>
                 <input type="text" maxlength="15px">
@@ -32,6 +32,7 @@
                 <textarea>
                     Add description here....
                 </textarea>
+                <input type="submit" value="Submit">
             </form>
         </div>
     <footer class="footer-container">

@@ -236,3 +236,21 @@ input[type=submit]:hover {
     font-size: 16px;
     resize: none;
   }
+  .main_container{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .main_container:hover{
+    background-color: powderblue;
+  }
+  .box{
+    border: 1px solid LightGray;
+    padding: 20px;
+    display: block;
+    height:50px;
+    width: 100%;
+    background-color: aliceblue;
+  }
+  .new{
+    text-align: right;
+  }

@@ -22,43 +22,68 @@
         </ul>
     </nav>
     <div class="main_container">
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong class="new">New Job Offer is now what is ..................</strong></p>                
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur......</strong></p>   
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>Lorem, ipsum dolor sit amet consectetur adipisicing......
-                 </strong></p>  
-        </section>
-        <section class="box">
-            <p><h3>Pinterest</h3><strong>Time management, Life Hacks quia consectetur aperiam............</strong></p> 
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur aperiam quia magni eu...........</strong></p> 
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur apeeum error obcaeca............</strong></p>
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur aperia...........</strong></p>   
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur aperiam......</strong></p>  
-        </section>
-        <section class="box">
-            <p><h3>Pinterest</h3><strong>Time management, Life Hacks quia consectetur aperiam.....</strong></p> 
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur........</strong></p> 
-        </section>
-        <section class="box">
-            <p><h3>Jobrapido</h3><strong>New Job Offer quia consectetur aperiam..........</strong></p>
-        </section>           
+            <h2>INBOX</h2>
+            <button class="accordion">Pinterest</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Udacity</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Coursera</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
+
+            <button class="accordion">Uganda Applications</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Slack</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Daily jobs</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
+            <button class="accordion">Indeed</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Medium Daily Digest</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">TechCrunch</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
     </div>
     <footer class="footer-container">
         <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
     </footer>
+    <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+            </script>  
 </body>
 </html>

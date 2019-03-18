@@ -97,6 +97,24 @@ body{
   margin: 0;
   padding: 0;
 }
+.save_draft_div {
+  width: 300px;
+  height: 390px;
+  margin:auto;
+  border: none;
+  padding: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+.draft_form {
+  width: 300px;
+  height: 400px;
+  background:powderblue;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
 .register_div {
     width: 300px;
     height: 350px;
@@ -265,4 +283,10 @@ input[type=submit]:hover {
   }
   .new{
     text-align: right;
+  }
+  #or{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline;
   }

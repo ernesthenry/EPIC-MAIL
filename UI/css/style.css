@@ -79,6 +79,24 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.send_email_div {
+  width: 300px;
+  height: 340px;
+  margin:auto;
+  border: none;
+  padding: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+.send_email_form {
+  width: 300px;
+  height: 400px;
+  background:powderblue;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
 .register_div {
     width: 300px;
     height: 350px;

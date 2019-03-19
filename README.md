@@ -22,9 +22,24 @@ These instructions will get you a copy of the project up and running on your loc
 You need to have the following installed onto your local machine
 
 ```
-Code Editor forexample vscode
+Code Editor forexample Visual Studio Code
 
 ```
+
+## Login credentials
+
+#ADMIN
+```
+email: admin@gmail.com</br>
+password: admin123
+```
+#USER
+```
+email: user@gmail.com</br>
+password: user123
+
+```
+
 
 ### Installations
 

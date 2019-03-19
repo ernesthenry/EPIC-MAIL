@@ -37,14 +37,14 @@ git clone https://github.com/ernesthenry/EPIC-MAIL.git
 
 Open the repo folder using your code editor forexample vscode
 
-### Link to epic mail on Github Pages
+### Please check it on Github pages
 
-### [Epic_mail](https://ernesthenry.github.io/EPIC-MAIL/)
+### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/)
 
 ### Built With
-#- [HTML](https://www.w3schools.com/html/)
-#-[CSS](https://www.w3schools.com/css/default.asp)
-#-[JavaScript](https://www.w3schools.com/js/default.asp)
+#[HTML](https://www.w3schools.com/html/)
+#[CSS](https://www.w3schools.com/css/default.asp)
+#[JavaScript](https://www.w3schools.com/js/default.asp)
 
 
 

@@ -26,9 +26,15 @@ body{
   background-color:LightGray;
   margin-bottom: 100px;
 }
-.header-container-sent{
+.header-container-draft{
   padding-left: 20px;
   background-color:LightGray;
+  margin-bottom: 100px;
+}
+.header-container-create{
+  padding-left: 20px;
+  background-color:LightGray;
+  margin-bottom: 100px;
 }
 .footer-container{
     margin-top: 100px;
@@ -55,6 +61,14 @@ body{
   margin-top: 100px;
 }
 .footer-container-draft{
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+  background-color: LightGray;
+  font-family: 'Times New Roman';
+  margin-top: 100px;
+}
+.footer-container-create{
   margin-top: 100px;
   text-align: center;
   padding: 20px;

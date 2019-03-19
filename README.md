@@ -52,7 +52,7 @@ git clone https://github.com/ernesthenry/EPIC-MAIL.git
 
 Open the repo folder using your code editor forexample vscode
 
-### Please check it on Github pages
+### Github Pages Link
 
 ### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/UI)
 ### Built With

@@ -28,14 +28,14 @@ Code Editor forexample Visual Studio Code
 
 ## Login credentials
 
-#ADMIN
+## ADMIN
 ```
-email: admin@gmail.com</br>
+email: admin@gmail.com
 password: admin123
 ```
-#USER
+## USER
 ```
-email: user@gmail.com</br>
+email: user@gmail.com
 password: user123
 
 ```

@@ -21,44 +21,67 @@
             <li><a href="#about">ABOUT</a></li>
         </ul>
     </nav>
-    <div class="main_container_sent">
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong class="new">New Job Offer Lorem ipsum dolor sit amet...... 
-       </strong></p>                
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer mollitia minus alias eligendi atque 
-                quia </strong></p>   
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&n<strong>New Job Offermollitia minus alias 
-                eligen</strong></p>  
-        </section>
-        <section class="box1">
-            <p><h3>Pinterest</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Time management, Life Hacks</strong></p> 
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer</strong></p> 
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer hfhhf ff...</strong></p>
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer</strong></p>   
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer</strong></p>  
-        </section>
-        <section class="box1">
-            <p><h3>Pinterest</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Time management, Life Hacks</strong></p> 
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer</strong></p> 
-        </section>
-        <section class="box1">
-            <p><h3>Jobrapido</h>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>New Job Offer</strong></p>
-        </section>           
+    <div class="main_container">
+            <h2>SENT MESSSAGES</h2>
+            <button class="accordion">Equity Bank</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">August Intake</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Coursera</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
+
+            <button class="accordion">Uganda Applications</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Slack</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Andela</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
+            <button class="accordion">Andela masterclass</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Linkedin</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">C3 Alive Kabalagala</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div> 
     </div>
+    <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+            </script>  
     <footer class="footer-container">
         <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
     </footer>

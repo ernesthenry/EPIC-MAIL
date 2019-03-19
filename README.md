@@ -54,8 +54,7 @@ Open the repo folder using your code editor forexample vscode
 
 ### Please check it on Github pages
 
-### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/)
-
+### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/UI)
 ### Built With
 [HTML](https://www.w3schools.com/html/)
 [CSS](https://www.w3schools.com/css/default.asp)

@@ -1,7 +1,7 @@
 # EPIC-MAIL
 The internet is increasingly becoming an integral part of lives. Ever since the invetnion of electronic mail by Ray Tomlinson, emails have grown to become  the primary medium of exchanginng information over the internet between two or more people, until the advent of instant Messaging Apps.
 
-Epic mail is therefore designed to bridge the two technologies by being an app that helps people exchange messages/information over the internet. 
+EPIC MAIL is therefore designed to bridge the two technologies by being an app that helps people exchange messages/information over the internet. EPIC MAIL will be used within andela.
 
 ## Features.
 
@@ -28,12 +28,12 @@ Code Editor forexample Visual Studio Code
 
 ## Login credentials
 
-# Admin
+### Admin
 ```
 email: admin@gmail.com
 password: admin123
 ```
-# User
+### User
 ```
 email: user@gmail.com
 password: user123

@@ -13,7 +13,17 @@ body{
   padding-left: 20px;
   background-color:LightGray;
 }
-.header-container-index{
+.header-container-admin{
+  padding-left: 100px;
+  background-color:LightGray;
+  margin-bottom: 50px;
+}
+.header-container-user{
+  padding-left: 100px;
+  background-color:LightGray;
+  margin-bottom: 50px;
+}
+.header-container-draft{
   padding-left: 20px;
   background-color:LightGray;
 }
@@ -29,16 +39,33 @@ body{
     font-family: 'Times New Roman';
     margin-top: 100px;
 }
+.footer-container-admin{
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+  background-color: LightGray;
+  font-family: 'Times New Roman';
+  margin-top: 100px;
+}
+.footer-container-user{
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+  background-color: LightGray;
+  font-family: 'Times New Roman';
+  margin-top: 100px;
+}
+
 .header-content{
     padding:10px;
 }
 .epic{
     font-variant: small-caps;
     font-size: 25px;
-    color: rgb(0, 38, 255);
+    color:#33b5e5;
 }
 .mail{
-    color: rgb(0, 38, 255);
+    color:#33b5e5;
 }
 .forgot_link{
     text-decoration: none;
@@ -46,28 +73,7 @@ body{
     font-size: 18px;
     color:rgb(0, 38, 255);
 }
-#navbar{
-    margin-bottom: 100px;
-}
-#navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  #navbar li {
-    float: left;
-  }
-  
-  #navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+
   .col-3 menu li a{
     text-decoration: none;
     color:white;
@@ -79,12 +85,13 @@ body{
   }
 
   #navbar .active{
-    background-color: #4CAF50;
+    max-width: 100;
+    margin: auto;
   }
 
   .login_div {
       width: 300px;
-      height: 300px;
+      height: 35S0px;
       margin:auto;
       border: none;
       padding: 20px;
@@ -92,13 +99,28 @@ body{
       padding: 20px;
       border-radius: 5px;
 }
-.reset_div img{
-    height: 50px;
-    width:50px;
+.login_div img{
+    height: 60px;
+    width:60px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+.reset_div img{
+  height: 60px;
+  width:60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.register_div img{
+  height: 60px;
+  width:60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .send_email_div {
   width: 300px;
   height: 340px;
@@ -137,7 +159,7 @@ body{
 }
 .register_div {
     width: 300px;
-    height: 350px;
+    height: 450px;
     margin:auto;
     border: none;
     padding: 20px;
@@ -147,7 +169,7 @@ body{
 }
 .reset_div {
     width: 300px;
-    height: 350px;
+    height: 390px;
     margin:auto;
     border: none;
     padding: 20px;

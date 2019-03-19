@@ -42,9 +42,9 @@ Open the repo folder using your code editor forexample vscode
 ### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/)
 
 ### Built With
-#[HTML](https://www.w3schools.com/html/)
-#[CSS](https://www.w3schools.com/css/default.asp)
-#[JavaScript](https://www.w3schools.com/js/default.asp)
+[HTML](https://www.w3schools.com/html/)
+[CSS](https://www.w3schools.com/css/default.asp)
+[JavaScript](https://www.w3schools.com/js/default.asp)
 
 
 

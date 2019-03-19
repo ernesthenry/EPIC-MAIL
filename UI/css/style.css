@@ -6,7 +6,20 @@ body{
 }
 .header-container{
     padding-left: 20px;
-    background-color:LightGray
+    background-color:LightGray;
+    margin-bottom: 100px;
+}
+.header-container-inbox{
+  padding-left: 20px;
+  background-color:LightGray;
+}
+.header-container-index{
+  padding-left: 20px;
+  background-color:LightGray;
+}
+.header-container-sent{
+  padding-left: 20px;
+  background-color:LightGray;
 }
 .footer-container{
     margin-top: 100px;
@@ -14,6 +27,7 @@ body{
     padding: 20px;
     background-color: LightGray;
     font-family: 'Times New Roman';
+    margin-top: 100px;
 }
 .header-content{
     padding:10px;
@@ -21,7 +35,7 @@ body{
 .epic{
     font-variant: small-caps;
     font-size: 25px;
-    color: red;
+    color: rgb(0, 38, 255);
 }
 .mail{
     color: rgb(0, 38, 255);

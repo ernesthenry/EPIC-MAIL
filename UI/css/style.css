@@ -4,6 +4,103 @@ body{
 * {
   box-sizing: border-box;
 }
+.wrapper{
+	flex-basis: 40%;
+	display:flex;
+	flex-direction: row;
+	margin:5%;
+  justify-content:space-around;
+}
+.container-1{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+  align-content: space-between;
+}
+.container-2{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+.box_1{
+	justify-content: center;
+  align-self: center;
+	text-transform: uppercase;
+  color: #2f2fa2;
+}
+.box_2{
+	align-self: center;
+  flex: 1;
+  border-style: inset;
+}
+.box_3{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.box_4{
+	flex: 1;
+	justify-content: flex-start;
+  justify-content: space-around;
+  border-style: inset;
+}
+.box_5{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.box_6{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.box_a{
+	justify-content: center;
+	align-self: center;
+	text-transform: uppercase;
+  color: #05386b;
+  border-style: inset;
+}
+.box_b{
+	align-self: center;
+  flex: 1;
+  border-style: inset;
+}
+.box_c{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.box_d{
+	flex: 1;
+	justify-content: flex-start;
+  justify-content: space-around;
+  border-style: inset;
+}
+.box_e{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.box_f{
+	flex: 1;
+  justify-content: flex-start;
+  border-style: inset;
+}
+.button_1{
+	color: 080f5b;
+	background: #3b8beb;
+	align-self: center;
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-radius: 10px;
+	flex-wrap: wrap;
+}
 .header-container{
     padding-left: 20px;
     background-color:LightGray;
@@ -36,11 +133,22 @@ body{
   background-color:LightGray;
   margin-bottom: 100px;
 }
+.header-container-login{
+  padding-left: 20px;
+  background-color:LightGray;
+}
+footer{
+  background-color: LightGray;
+	padding: 20px;
+	text-align: center;
+	font-size: 20px;
+	margin-top:100px;
+}
+
 .footer-container{
     margin-top: 100px;
     text-align: center;
     padding: 20px;
-    background-color: LightGray;
     font-family: 'Times New Roman';
     margin-top: 100px;
 }
@@ -54,6 +162,14 @@ body{
 }
 .footer-container-user{
   margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+  background-color: LightGray;
+  font-family: 'Times New Roman';
+  margin-top: 100px;
+}
+.footer-container-login{
+  margin-top: 80px;
   text-align: center;
   padding: 20px;
   background-color: LightGray;
@@ -83,16 +199,16 @@ body{
 .epic{
     font-variant: small-caps;
     font-size: 25px;
-    color:#33b5e5;
+    color:#0099cc;
 }
 .mail{
-    color:#33b5e5;
+    color:#0099cc;
 }
 .forgot_link{
     text-decoration: none;
     font-style: bold;
     font-size: 18px;
-    color:rgb(0, 38, 255);
+    color: #0099cc;
 }
 
   .col-3 menu li a{
@@ -101,10 +217,6 @@ body{
     text-align: center;
   }
   
-  #navbar li a:hover {
-    background-color: #111;
-  }
-
   #navbar .active{
     max-width: 100;
     margin: auto;
@@ -144,7 +256,7 @@ body{
 
 .send_email_div {
   width: 300px;
-  height: 340px;
+  height: 370px;
   margin:auto;
   border: none;
   padding: 20px;
@@ -233,6 +345,7 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    color:#ccc;
   }
   input[type=email], select {
     width: 100%;
@@ -254,7 +367,7 @@ input[type=text], select {
   }
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #33b5e5;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -273,7 +386,7 @@ input[type=submit] {
     cursor: pointer;
   }
 input[type=submit]:hover {
-    background-color: #45a049;
+  background-color: #0099cc;
   }
   
   textarea {
@@ -333,7 +446,7 @@ input[type=submit]:hover {
     font-weight: bold;
     text-align: center;
     display: inline;
-    color: blue;
+    color:#0099cc;
   }
   .email_content img{
     width:170px;
@@ -438,7 +551,7 @@ input[type=submit]:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#379683;
+    background-color:#0099cc;
   }
   #navbar li {
     float: right;
@@ -449,4 +562,31 @@ input[type=submit]:hover {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+#navbar-login{
+  margin-bottom: 80px;
+}
+#navbar-login ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #33b5e5;
+}
+#navbar-login li {
+  float: right;
+}
+#navbar-login li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#navbar-login li a:hover {
+  background-color:#0099cc;
+}
+#navbar li a:hover {
+  background-color:#0099cc;
 }

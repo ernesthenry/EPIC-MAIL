@@ -8,47 +8,31 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header class="header-container">
+    <header class="header-container-login">
         <div class="header-content">
             <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
         </div>
     </header>
-    <nav id="navbar">
-        <ul>
-            <li><a class="active" href="#home">HOME</a></li>
-            <li><a href="register.html">REGISTER</a></li>
-            <li><a href="login.html">LOGIN</a></li>
-            <li><a href="#about">ABOUT</a></li>
+    <nav id="navbar-login">
+        <ul> 
+            <li><a href="register.html" class="register">REGISTER</a></li>
         </ul>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-3 menu">
-                <ul>
-                    <li><a href="view_inbox.html" target="blank">INBOX</a></li>
-                    <li><a href="save_draft.html" target="blank">COMPOSE</a></li>
-                    <li><a href="view_sent.html" target="blank">VIEW SENT MESSAGES</a></li>
-                    <li><a href="create.html" target="blank">CREATE GROUP</a></li>
-                </ul>
-            </div>
-            <div class="col-6">
-                <h1>WELCOME TO EPIC MAIL</h1>
-                <p>EPIC MAIL is a web app that helps people exchange messages/information over the internet</p>
-            </div>
-            <div class="col-3 right">
-                <div class="aside">
-                    <h2>What?</h2>
-                    <p>EPIC MAIL is the future messaging app</p>
-                    <h2>Where?</h2>
-                    <p>It will be used at Andela</p>
-                    <h2>How?</h2>
-                    <p>Users can use this application for sending messages or information over the internet.</p>
-                </div>
-            </div>
-        </div>
+    </nav> 
+    <div class="login_div">
+        <img src="images/login.png">
+            <form id="login_form" action="user.html">
+                <label>Email:</label>
+                <input type="email" id="email" name="email" placeholder="user@gmail.com">
+                <label>Password:</label>
+                <input type="password" id="password" name="password" placeholder="user123">
+                <input type="submit" value="Submit" onclick="login()">
+                <p>Forgot password?<a href="reset.html" class="forgot_link"> Reset</a></p>
+                <span id="error"></span>
+            </form>
+        <script src="javascript/script.js"></script>
     </div>
-    <footer class="footer-container">
-        <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
+    <footer class="footer-container-login">
+        <h2 class="epic">EPIC <span class="mail">MAIL</span>&copy; 2019</h2>
     </footer>
 </body>
 </html>

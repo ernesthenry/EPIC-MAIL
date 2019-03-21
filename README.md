@@ -1,7 +1,7 @@
 # EPIC-MAIL
 The internet is increasingly becoming an integral part of lives. Ever since the invetnion of electronic mail by Ray Tomlinson, emails have grown to become  the primary medium of exchanginng information over the internet between two or more people, until the advent of instant Messaging Apps.
 
-Epic mail is therefore designed to bridge the two technologies by being an app that helps people exchange messages/information over the internet. 
+EPIC MAIL is therefore designed to bridge the two technologies by being an app that helps people exchange messages/information over the internet. EPIC MAIL will be used within andela.
 
 ## Features.
 
@@ -22,9 +22,24 @@ These instructions will get you a copy of the project up and running on your loc
 You need to have the following installed onto your local machine
 
 ```
-Code Editor forexample vscode
+Code Editor forexample Visual Studio Code
 
 ```
+
+## Login credentials
+
+### Admin
+```
+email: admin@gmail.com
+password: admin123
+```
+### User
+```
+email: user@gmail.com
+password: user123
+
+```
+
 
 ### Installations
 
@@ -37,10 +52,9 @@ git clone https://github.com/ernesthenry/EPIC-MAIL.git
 
 Open the repo folder using your code editor forexample vscode
 
-### Please check it on Github pages
+### Github Pages Link
 
-### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/)
-
+### [EPIC-MAIL](https://ernesthenry.github.io/EPIC-MAIL/UI)
 ### Built With
 [HTML](https://www.w3schools.com/html/)
 [CSS](https://www.w3schools.com/css/default.asp)

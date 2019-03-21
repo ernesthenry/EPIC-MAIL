@@ -8,35 +8,27 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header class="header-container">
+    <header class="header-container-create">
         <div class="header-content">
             <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
         </div>
     </header>
-        <nav id="navbar">
-            <ul> 
-                <li><a class="active" href="#home">ADMIN PAGE</a></li>
-                <li><a href="#" class="create">CREATE GROUP</a></li>
-                <li><a href="#contact">CANCEL</a></li>
-            </ul>
-        </nav>
         <div class="group-container">
-            <form id="group-container_form">
+            <form id="group-container_form" action="admin.html">
                 <label>Group name:</label>
                 <input type="text" maxlength="15px">
                 <label>Group email address:</label>
-                <input type="text" maxlength="15px">
+                <input type="email" maxlength="15px">
                 <label>Add member:</label>
                 <input type="text" maxlength="15px">
                 <label>Group description:</label>
-                <textarea>
-                    Add description here....
+                <textarea placeholder="Add description here">
                 </textarea>
                 <input type="submit" value="Submit">
             </form>
         </div>
-    <footer class="footer-container">
-        <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
+    <footer class="footer-container-create">
+        <h2 class="epic">EPIC <span class="mail">MAIL</span>&copy; 2019</h2>
     </footer>
 </body>
 </html>

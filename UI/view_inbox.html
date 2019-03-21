@@ -1,89 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>INBOX | EPIC-MAIL</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-    <header class="header-container">
-        <div class="header-content">
-            <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
-        </div>
-    </header>
-    <nav id="navbar">
-        <ul> 
-            <li><a class="active" href="#home">MY INBOX</a></li>
-            <li><a href="register.html">REGISTER</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="#about">ABOUT</a></li>
-        </ul>
-    </nav>
-    <div class="main_container">
-            <h2>INBOX</h2>
-            <button class="accordion">Pinterest</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">Udacity</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">Coursera</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div> 
 
-            <button class="accordion">Uganda Applications</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">Slack</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">Daily jobs</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div> 
-            <button class="accordion">Indeed</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">Medium Daily Digest</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            
-            <button class="accordion">TechCrunch</button>
-            <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>INBOX | EPIC-MAIL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <header class="header-container-inbox">
+    <div class="header-content">
+      <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
     </div>
-    <footer class="footer-container">
-        <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
-    </footer>
-    <script>
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                        panel.style.display = "none";
-                    } else {
-                        panel.style.display = "block";
-                    }
-                });
-            }
-            </script>  
+  </header>
+  <nav id="navbar-login">
+      <ul> 
+          <li><a href="user.html" class="register">HOME</a></li>
+      </ul>
+  </nav> 
+  <div class="wrapper">
+    <div class="container-1">
+      <div class="box_1">
+        <h3>INBOX</h3>
+      </div>
+      <div class="box_2">
+        <h3>Uganda Applications</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</p>
+        <p><span class="text1">Received on 23/06/2018 at 8:20pm</span></p>
+        <button class="button_1">REPLY</button> <br>
+        <button class="button_1">DELETE</button>
+      </div>
+
+      <div class="box_3">
+        <h3>Medium Daily Digest</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</p>
+        <p><span class="text1">Received on 23/06/2018 2:30pm</span></p>
+        <button class="button_1">REPLY</button> <br>
+        <button class="button_1">DELETE</button>
+      </div>
+      <div class="box_4">
+        <h3>Pinterest</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</p>
+          <p><span class="text1">Received on 23/06/2018 at 9.30pm</span></p>
+          <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button>
+        </div>
+        <div class="box_5">
+          <h3>Jobrapido</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.</p>
+          <p><span class="text1">Received on 23/06/2018 at 9.30am</span></p>
+          <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button>
+        </div>
+          <div class="box_6">
+            <h3>Landing Jobs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.</p>
+            <p><span class="text1">Received on 23/06/2018 at 3.40am</span></p>
+            <button class="button_1">REPLY</button> <br>
+            <button class="button_1">DELETE</button>
+          </div>
+        </div>
+      </div>
+      <footer class="footer-container">
+          <h2 class="epic">EPIC <span class="mail">MAIL</span>&copy; 2019</h2>
+      </footer>
 </body>
 </html>

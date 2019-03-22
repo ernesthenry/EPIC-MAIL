@@ -8,25 +8,52 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header class="header-container">
+    <header class="header-container-register">
         <div class="header-content">
             <h3 class="epic">EPIC <span class="mail">MAIL</span></h3>
         </div>
     </header>
+    <nav id="navbar-login">
+        <ul> 
+            <li><a href="index.html" class="register">LOGIN</a></li>
+        </ul>
+    </nav>
     <div class="register_div">
         <img src="images/signup.jpg"/>
-            <form id="register_form" action="index.html">
+            <form id="register_form" action="index.html" onsubmit="return validatePassword()">
                 <label>Email:</label>
-                <input type="text" name="email" placeholder="Email...">
+                <input id = "email" type="email" required name="email" placeholder="Email...">
                 <label>First name:</label>
-                <input type="text" name="password" placeholder="First name...">
+                <input id="fname" type="text" required pattern="\w+" name="password" placeholder="First name...">
                 <label>Last name:</label>
-                <input type="text" name="email" placeholder="Last name...">
+                <input id ="lname" type="text" required pattern="\w+" name="email" placeholder="Last name...">
                 <label>Password:</label>
-                <input type="password" name="password" placeholder="Password...">
+                <input id ="newPassword" type="password"  name="password" placeholder="Password...">
                 <input type="submit" value="Submit">
+                <span id="error"></span>
+                <span id="msg"></span>
             </form>
     </div>
+    <script>
+        function validatePassword() {
+            var p = document.getElementById('newPassword').value,
+            errors = [];
+            if (p.length < 8) {
+                errors.push("Your password must be at least 8 characters");
+            }
+            if (p.search(/[a-z]/i) < 0) {
+                errors.push("Your password must contain at least one letter."); 
+            }
+            if (p.search(/[0-9]/) < 0) {
+                errors.push("Your password must contain at least one digit.");
+             }
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return false;
+            }
+            return true;
+        }
+    </script>
     <footer class="footer-container">
         <h2 class="epic">EPIC <span class="mail">MAIL</span>&copy; 2019</h2>
     </footer>

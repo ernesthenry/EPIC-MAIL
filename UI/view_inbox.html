@@ -27,22 +27,33 @@
       </div>
       <div class="box_2">
         <h3>Uganda Applications</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          incididunt ut labore etdolore magna aliqua.Ut enim ad minim veniam, quis nostrud 
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <p><span class="text1">Received on 23/06/2018 at 8:20pm</span></p>
-        <button class="button_1">REPLY</button> <br>
-        <button class="button_1">DELETE</button>
+        <button class="thread">...</button>
+          <div class="panel">
+            <p>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+              labore et dolore magna aliqua. Ut enim ad minim veniam, 
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
+          <button class="button_1">DELETE</button> <br>
+        <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+        <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
       </div>
-
       <div class="box_3">
         <h3>Medium Daily Digest</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat.</p>
         <p><span class="text1">Received on 23/06/2018 2:30pm</span></p>
-        <button class="button_1">REPLY</button> <br>
-        <button class="button_1">DELETE</button>
+        <button class="thread">...</button>
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="button_1">DELETE</button> <br>
+        <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+        <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
       </div>
       <div class="box_4">
         <h3>Pinterest</h3>
@@ -50,8 +61,15 @@
           dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat.</p>
           <p><span class="text1">Received on 23/06/2018 at 9.30pm</span></p>
-          <button class="button_1">REPLY</button> <br>
-          <button class="button_1">DELETE</button>
+          <button class="thread">...</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            </p>
+          </div>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
         </div>
         <div class="box_5">
           <h3>Jobrapido</h3>
@@ -59,8 +77,15 @@
             dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.</p>
           <p><span class="text1">Received on 23/06/2018 at 9.30am</span></p>
-          <button class="button_1">REPLY</button> <br>
-          <button class="button_1">DELETE</button>
+          <button class="thread">...</button>
+          <div class="panel">
+            <p>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
         </div>
           <div class="box_6">
             <h3>Landing Jobs</h3>
@@ -68,11 +93,43 @@
               dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
               ea commodo consequat.</p>
             <p><span class="text1">Received on 23/06/2018 at 3.40am</span></p>
-            <button class="button_1">REPLY</button> <br>
-            <button class="button_1">DELETE</button>
+            <button class="thread">...</button>
+          <div class="panel">
+            <p>Lorem ipsum...</p>
+          </div>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button><br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
           </div>
         </div>
       </div>
+      <script>
+      var thread = document.getElementsByClassName("thread");
+      var i;
+      for (i = 0; i < thread.length; i++) {
+        thread[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+      function myfunc() {
+        var selectedobj=document.getElementById('showthis');
+        if(selectedobj.className=='hide'){  //check if classname is hide 
+          selectedobj.style.display = "block";
+          selectedobj.readOnly=true;
+          selectedobj.className ='show';
+        }
+        else{
+          selectedobj.style.display = "none";
+          selectedobj.className ='hide';
+        }
+      }
+      </script>
       <footer class="footer-container">
           <h2 class="epic">EPIC <span class="mail">MAIL</span>&copy; 2019</h2>
       </footer>

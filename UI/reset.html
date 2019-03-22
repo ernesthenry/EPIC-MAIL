@@ -15,16 +15,29 @@
     </header>
     <div class="reset_div">
             <img src="images/reset.png">
-            <form id="reset_form" action="index.html">
+            <form id="reset_form" action="index.html" name="reset_form" onsubmit="return matchpassword()">
                 <label>Email:</label>
                 <input type="email" name="email" placeholder="Email...">
                 <label>New Password:</label>
-                <input type="password" name="password" placeholder="Password...">
+                <input type="password" required name="password"  placeholder="Password...">
                 <label>Confirm Password:</label>
-                <input type="password"="password" placeholder="Password...">
+                <input type="password" name="password2"  placeholder="Password...">
                 <input type="submit" value="Submit">
             </form>
     </div>
+    <script>  
+        function matchpassword(){  
+        var firstpassword=document.reset_form.password.value;  
+        var secondpassword=document.reset_form.password2.value;  
+        if(firstpassword==secondpassword){  
+            return true;  
+        }  
+        else{  
+            alert("password must be the same");  
+        return false;  
+        }  
+    }  
+    </script>  
     <footer class="footer-container">
         <h2 class="epic">EPIC <span class="mail">MAIL</span></h2>
     </footer>

@@ -529,7 +529,7 @@ input[type=submit]:hover {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
-  .accordion {
+  .thread {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -541,7 +541,7 @@ input[type=submit]:hover {
     font-size: 15px;
     transition: 0.4s;
   }
-  .active, .accordion:hover {
+  .active, .thread:hover {
     background-color: #ccc; 
   }
   

@@ -125,12 +125,10 @@ body{
 .header-container-draft{
   padding-left: 20px;
   background-color:LightGray;
-  margin-bottom: 100px;
 }
 .header-container-draft{
   padding-left: 20px;
   background-color:LightGray;
-  margin-bottom: 100px;
 }
 .header-container-create{
   padding-left: 20px;
@@ -352,7 +350,6 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    color:#ccc;
   }
   input[type=email], select {
     width: 100%;
@@ -406,6 +403,18 @@ input[type=submit]:hover {
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+  }
+  .hide textarea{
+    flex-basis: 20%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+
   }
   .main_container{
     margin-left: 20px;
@@ -546,6 +555,7 @@ input[type=submit]:hover {
     padding: 14px 16px;
     text-decoration: none;
 }
+
 
 #navbar-login{
   margin-bottom: 80px;

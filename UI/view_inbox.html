@@ -37,7 +37,9 @@
               labore et dolore magna aliqua. Ut enim ad minim veniam, 
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
           </div>
-        <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button> <br>
+        <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+        <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
       </div>
       <div class="box_3">
         <h3>Medium Daily Digest</h3>
@@ -49,7 +51,9 @@
           <div class="panel">
             <p>Lorem ipsum...</p>
           </div>
-        <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button> <br>
+        <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+        <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
       </div>
       <div class="box_4">
         <h3>Pinterest</h3>
@@ -63,7 +67,9 @@
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             </p>
           </div>
-          <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
         </div>
         <div class="box_5">
           <h3>Jobrapido</h3>
@@ -77,7 +83,9 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
           </div>
-          <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button> <br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
         </div>
           <div class="box_6">
             <h3>Landing Jobs</h3>
@@ -89,7 +97,9 @@
           <div class="panel">
             <p>Lorem ipsum...</p>
           </div>
-          <button class="button_1">REPLY</button> <br>
+          <button class="button_1">DELETE</button> <br>
+          <button class="button_1" onclick="myfunc()">REPLY</button><br>
+          <textarea id="showthis" style="display:none" class="hide"></textarea></textarea>
           </div>
         </div>
       </div>
@@ -106,6 +116,18 @@
             panel.style.display = "block";
           }
         });
+      }
+      function myfunc() {
+        var selectedobj=document.getElementById('showthis');
+        if(selectedobj.className=='hide'){  //check if classname is hide 
+          selectedobj.style.display = "block";
+          selectedobj.readOnly=true;
+          selectedobj.className ='show';
+        }
+        else{
+          selectedobj.style.display = "none";
+          selectedobj.className ='hide';
+        }
       }
       </script>
       <footer class="footer-container">

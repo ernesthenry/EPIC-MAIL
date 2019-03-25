@@ -70,4 +70,4 @@ class UserController:
                             
         else:
             return jsonify({"error": "Wrong login credentials.", "status": 401}), 401
-                       
+                   

@@ -12,6 +12,11 @@ def message():
     data = request.get_json(force=True)
     return msg_controller.new_message(data)
 
-@messages_bp.route("/messages/sent", methods=["GET"])
+@message_bp.route("/messages/sent", methods=["GET"])
 def get_all_sent():
-    return message_controller.fetch_all_sent_messages("sent")
+    return msg_controller.fetch_all_sent_messages("sent")
+
+@message_bp.route("/messages/<message_id>", methods=["GET"])
+def get_specific_message(message_id):
+    return msg_controller.get_message(message_id)
+

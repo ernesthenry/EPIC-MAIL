@@ -1,7 +1,7 @@
 from flask import request, jsonify, json
 from api.utilities.helpers import token_required, get_current_identity
 from api.utilities.validation import validate_message
-from api.models.message import user_messages, Message
+from api.models.message import user_messages, Message, get_sent_messages, get_specific_message
 
 class MessageController:
 
@@ -71,4 +71,18 @@ class MessageController:
                     {"status": 404, "error": "You have not sent any mail yet."
                 }), 404
             )
+
+    def get_message(self, message_id):
+        single_message = get_message(int(message_id))
+        if single_message:
+            return jsonify(
+                {"status": 200,
+                 "data": single_message
+                 }), 200
+        else:
+            return jsonify(
+                    {
+                        "status": 404, 
+                        "error": "Message  does not exist"
+                    }),404
         

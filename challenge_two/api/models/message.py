@@ -13,3 +13,11 @@ class Message:
         self.reciever_status = "unread"
         self.parent_message_id = int(uuid.uuid4())
         self.created_on = str(datetime.now())
+
+    def get_sent_messages(sender_status):
+    """Function which all sent messages by a user."""
+    sent_messages = [
+        message for message in user_messages
+        if message["sender_status"] == "sent" 
+    ]
+    return sent_messages

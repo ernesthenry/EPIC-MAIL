@@ -55,3 +55,20 @@ class MessageController:
                         "Message": new_message.__dict__,
                         }]
                         }),201
+
+    def fetch_all_sent_messages(self, sender_status):
+        all_messages = get_sent_messages(sender_status)
+
+        if all_messages:
+            return jsonify({
+                "status": 200,
+                "data": [message for message in all_messages],
+                "message": "These are your sent messages"
+            }), 200)
+            
+        else:
+            return jsonify(
+                    {"status": 404, "error": "You have not sent any mail yet."
+                }), 404
+            )
+        

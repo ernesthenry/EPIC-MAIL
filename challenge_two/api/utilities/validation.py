@@ -47,3 +47,18 @@ def validate_password(password):
             or not re.search("[@$!%*?&#-]", password):
         error = "Password should have atleast one lowercase character,one Uppercase character, one Integer and one Special character"
     return error
+
+def validate_message(**kwargs):
+    errors = {}
+    errors["subject"] = validate_sentence(kwargs.get("subject"))
+    errors["message"] = validate_sentence(kwargs.get("message"))
+    invalid = {key: value for key, value in errors.items() if value}
+    return invalid
+
+def validate_sentence(sentence):
+    error = None
+    sentence = str(sentence).strip()
+    if sentence.isdigit():
+        error = "Field cannot be a number"
+    return error
+    

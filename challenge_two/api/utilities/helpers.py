@@ -4,8 +4,8 @@ from flask import jsonify, request
 import jwt
 from os import environ
 from functools import wraps
+from api.models.user import user_data
 
-SECRET_KEY = "epicmail-reloaded"
 
 secret_key = environ.get("SECRET_KEY", "epicmail-reloaded")
 
@@ -19,7 +19,7 @@ def generate_token(user, isAdmin=False):
             "isAdmin": isAdmin
         }
         # create the byte string token using the payload and the SECRET key
-        jwt_string = jwt.encode(payload, SECRET_KEY,
+        jwt_string = jwt.encode(payload, secret_key,
                                 algorithm='HS256').decode("utf-8")
         return jwt_string
 
@@ -32,7 +32,7 @@ def decode_token(token):
     """Decodes the access token from the Authorization header."""
     try:
         # try to decode the token using our SECRET variable
-        payload = jwt.decode(token, SECRET_KEY)
+        payload = jwt.decode(token, secret_key)
         return payload['userid']
     except jwt.ExpiredSignatureError:
         # the token is expired, return an error string

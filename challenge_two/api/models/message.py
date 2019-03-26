@@ -29,3 +29,12 @@ class Message:
         if message["message_id"] == message_id
     ]
     return specific_messsage
+
+    def delete_from_inbox(message_id):
+    """ Method that deletes a given message from user inbox """
+    deleted_message = [
+        message for message in user_messages
+        if message["message_id"] == message_id and message["receiver_status"] == "unread"
+            
+    ]
+    return deleted_message

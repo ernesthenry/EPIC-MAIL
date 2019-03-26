@@ -20,3 +20,6 @@ def get_all_sent():
 def get_specific_message(message_id):
     return msg_controller.get_message(message_id)
 
+@message_bp.route("/messages/<message_id>", methods=["DELETE"])
+def delete_specific_message(message_id):
+    return msg_controller.delete_email(message_id)

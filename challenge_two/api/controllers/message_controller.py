@@ -1,7 +1,13 @@
 from flask import request, jsonify, json
 from api.utilities.helpers import token_required, get_current_identity
 from api.utilities.validation import validate_message
-from api.models.message import user_messages, Message, get_sent_messages, get_specific_message
+from api.models.message import (
+    user_messages, 
+    Message, 
+    get_sent_messages,
+    get_specific_message,
+    delete_from_inbox
+) 
 
 class MessageController:
 
@@ -73,7 +79,7 @@ class MessageController:
             )
 
     def get_message(self, message_id):
-        single_message = get_message(int(message_id))
+        single_message = get_specific_message(int(message_id))
         if single_message:
             return jsonify(
                 {"status": 200,
@@ -85,4 +91,21 @@ class MessageController:
                         "status": 404, 
                         "error": "Message  does not exist"
                     }),404
-        
+
+
+    def delete_email(self, email_id):
+        """ deleting an email from a user's inbox. """
+        deleted_message = delete_from_inbox(email_id)
+        if deleted_messages:
+            user_messages.remove(deleted_message)
+            return jsonify({
+                "status": 200,
+                "data": [{
+                    "message": "Message successfully deleted."
+                }]
+            }), 200
+        else:
+            return jsonify({
+                "status": 404,
+                 "error": "Message with such id does not exist"
+                 }),404

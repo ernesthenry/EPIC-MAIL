@@ -38,3 +38,12 @@ class Message:
             
     ]
     return deleted_message
+
+
+    def get_all_received_unread_messages(receiver_status):
+    """Function for getting all unread received messages."""
+    unread_message = [
+        message for message in user_messages
+        if message["receiver_status"] == "unread" 
+    ]
+    return unread_message

@@ -6,7 +6,8 @@ from api.models.message import (
     Message, 
     get_sent_messages,
     get_specific_message,
-    delete_from_inbox
+    delete_from_inbox,
+    get_all_received_unread_messages
 ) 
 
 class MessageController:
@@ -50,7 +51,6 @@ class MessageController:
                 "error": not_valid_user
                 }), 400
 
-        # message_data["userid"] = get_current_identity()
         new_message = Message(**message_data)
         user_messages.append(new_message.__dict__)
         return jsonify(
@@ -109,3 +109,20 @@ class MessageController:
                 "status": 404,
                  "error": "Message with such id does not exist"
                  }),404
+
+
+    def received_unread_emails(self, receiver_status):
+        received_unread_messages = get_all_received_unread_messages(receiver_status)
+        if received_unread_messages:
+            return jsonify({
+                "status": 200,
+                "data": [unread_message for unread_message in received_unread_messages],
+            }), 200   
+        else:
+            return jsonify(
+                    {
+                        "status": 404, 
+                        "error": "No messages in your inbox."
+                }), 400
+        
+

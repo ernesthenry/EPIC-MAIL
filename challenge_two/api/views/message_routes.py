@@ -23,3 +23,7 @@ def get_specific_message(message_id):
 @message_bp.route("/messages/<message_id>", methods=["DELETE"])
 def delete_specific_message(message_id):
     return msg_controller.delete_email(message_id)
+
+@message_bp.route("/messages/unread", methods=["GET"])
+def received_mails():
+    return msg_controller.received_unread_emails("received")

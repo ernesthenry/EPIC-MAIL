@@ -1,11 +1,11 @@
 import unittest
 import json
 from api.views.home_route import app
-from api.models.user import User
+from api.models.user import User, user_data
 class UserTestCase(unittest.TestCase):
 
     def setUp(self):
-        """initializing method for a unit test"""
+        """initialize tests"""
         self.client = app.test_client()
         
         self.data = {
@@ -184,5 +184,9 @@ class UserTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(response_data['status'], 401)
         self.assertIsInstance(response_data, dict)
+
+    def tearDown(self):
+        user_data.clear()
+
             
         

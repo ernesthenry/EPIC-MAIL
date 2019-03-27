@@ -1,4 +1,4 @@
-https://travis-ci.org/ernesthenry/EPIC-MAIL.svg?branch=develop
+[![Build Status](https://travis-ci.org/ernesthenry/EPIC-MAIL.svg?branch=develop)](https://travis-ci.org/ernesthenry/EPIC-MAIL)
 [![Coverage Status](https://coveralls.io/repos/github/ernesthenry/EPIC-MAIL/badge.svg?branch=develop)](https://coveralls.io/github/ernesthenry/EPIC-MAIL?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3cb7d5390b19c4ffc901/maintainability)](https://codeclimate.com/github/ernesthenry/EPIC-MAIL/maintainability)
 # EPIC-MAIL

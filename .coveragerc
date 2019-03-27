@@ -8,3 +8,7 @@ omit =
     */__init__.py
     tests.py/*
     */models.py
+    */helpers.py
+    */message_controller.py
+    */message.py
+    */test_message.py

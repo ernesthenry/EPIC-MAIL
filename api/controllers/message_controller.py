@@ -1,4 +1,4 @@
-from flask import request, jsonify, json
+from flask import jsonify, request, json
 from api.utilities.helpers import token_required, get_current_identity
 from api.utilities.validation import validate_message
 from api.models.message import (
@@ -35,7 +35,8 @@ class MessageController:
         subject = data.get("subject")
         message = data.get("message")
         duplicate_message = [
-            msg for msg in user_messages if msg["subject"] == subject
+            msg for msg in user_messages if msg["subject"] == subject \
+            and msg["message"] == message
             ]
         if duplicate_message:
             return jsonify({
@@ -43,12 +44,12 @@ class MessageController:
         "error": "User already exists"
         }), 409
 
-        invalid_message = validate_message(**message_data)
+        not_valid_message = validate_message(**message_data)
 
-        if invalid_message:
+        if not_valid_message:
             return jsonify({
                 "status": 400, 
-                "error": not_valid_user
+                "error": "Message arleady sent"
                 }), 400
 
         new_message = Message(**message_data)
@@ -70,13 +71,12 @@ class MessageController:
                 "status": 200,
                 "data": [message for message in all_messages],
                 "message": "These are your sent messages"
-            }), 200)
+            }), 200
             
         else:
             return jsonify(
                     {"status": 404, "error": "You have not sent any mail yet."
                 }), 404
-            )
 
     def get_message(self, message_id):
         single_message = get_specific_message(int(message_id))
@@ -93,11 +93,11 @@ class MessageController:
                     }),404
 
 
-    def delete_email(self, email_id):
+    def delete_email(self, message_id):
         """ deleting an email from a user's inbox. """
-        deleted_message = delete_from_inbox(email_id)
-        if deleted_messages:
-            user_messages.remove(deleted_message)
+        deleted_message = delete_from_inbox(message_id)
+        if deleted_message:
+            user_messages.remove(deleted_message[0])
             return jsonify({
                 "status": 200,
                 "data": [{
@@ -107,7 +107,7 @@ class MessageController:
         else:
             return jsonify({
                 "status": 404,
-                 "error": "Message with such id does not exist"
+                 "error": "Message does not exist"
                  }),404
 
 
@@ -124,5 +124,3 @@ class MessageController:
                         "status": 404, 
                         "error": "No messages in your inbox."
                 }), 400
-        
-

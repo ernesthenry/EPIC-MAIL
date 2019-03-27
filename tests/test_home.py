@@ -3,7 +3,7 @@ import json
 from api.views.home_route import app
 
 
-class BaseTest(unittest.TestCase):
+class BaseTestCase(unittest.TestCase):
 	""" Base Class for test data"""
 	def setUp(self):
 		self.client = app.test_client()

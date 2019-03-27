@@ -1,8 +1,8 @@
-#api/controllers
-from flask import jsonify, request,json
+from flask import jsonify, request, json
 from api.models.user import user_data, User, valid_credentials
 from api.utilities.validation import user_validation
 from api.utilities.helpers import generate_token
+
 
 class UserController:
     def signup_user(self):
@@ -12,17 +12,17 @@ class UserController:
                 {
                     "status": 400,
                     "error": "Empty Registration request. Please provide Registration data"
-                    }), 400
-        new_user ={
+                }), 400
+        new_user = {
             "email": data.get("email"),
             "firstname": data.get("firstname"),
             "lastname": data.get("lastname"),
             "password": data.get("password")
-            }
+        }
         email = data.get("email")
         already_user = [user for user in user_data if user['email'] ==
-        email
-        ]
+                        email
+                        ]
         if already_user:
             return jsonify({"status": 409, "error": "User already exists"}), 409
         not_valid_user = user_validation(**new_user)
@@ -36,10 +36,9 @@ class UserController:
                 {
                     "user": user.format_user_record(),
                     "message": " User registered Successfully"}
-                    ],
-                }
-                ),201
-
+            ],
+        }
+        ), 201
 
     def login_user(self):
         login_credentials = json.loads(request.data)
@@ -48,24 +47,27 @@ class UserController:
                 {
                     "status": 400,
                     "error": "Couldn't find your account"
-            }), 400
+                }), 400
         email = login_credentials.get("email")
         password = login_credentials.get("password")
 
-        userid = valid_credentials(email,password)
+        userid = valid_credentials(email, password)
         if userid:
-            return  jsonify(
+            return jsonify(
+                {
+                    "status": 200,
+                    "data": [
                         {
-                            "status": 200,
-                            "data": [
-                                {
-                                    "Token": generate_token(userid),
-                                    "Success": "User logged in successfully"
-                                }
-                                ],
-                                }
-                                ),200
-                            
+                            "Token": generate_token(userid),
+                            "Success": "User logged in successfully"
+                        }
+                    ],
+                }
+            ), 200
+
         else:
-            return jsonify({"error": "Wrong login credentials.", "status": 401}), 401
-                   
+            return jsonify({
+                "error":
+                "Wrong login credentials.",
+                "status": 401
+            }), 401

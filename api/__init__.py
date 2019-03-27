@@ -1,4 +1,3 @@
-# #api/
 from flask import Flask, Blueprint
 from api.views.user_routes import user_blueprint
 from api.views.message_routes import message_bp

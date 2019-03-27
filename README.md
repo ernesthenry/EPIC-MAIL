@@ -1,3 +1,6 @@
+https://travis-ci.org/ernesthenry/EPIC-MAIL.svg?branch=develop
+[![Coverage Status](https://coveralls.io/repos/github/ernesthenry/EPIC-MAIL/badge.svg?branch=develop)](https://coveralls.io/github/ernesthenry/EPIC-MAIL?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3cb7d5390b19c4ffc901/maintainability)](https://codeclimate.com/github/ernesthenry/EPIC-MAIL/maintainability)
 # EPIC-MAIL
 The internet is increasingly becoming an integral part of lives. Ever since the invetnion of electronic mail by Ray Tomlinson, emails have grown to become  the primary medium of exchanginng information over the internet between two or more people, until the advent of instant Messaging Apps.
 

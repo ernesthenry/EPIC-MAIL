@@ -20,7 +20,6 @@ class UserController:
             "password": data.get("password")
             }
         email = data.get("email")
-        firstname = data.get("firstname")
         already_user = [user for user in user_data if user['email'] ==
         email
         ]
@@ -28,7 +27,7 @@ class UserController:
             return jsonify({"status": 409, "error": "User already exists"}), 409
         not_valid_user = user_validation(**new_user)
         if not_valid_user:
-            return jsonify({"status": 400, "error": not_valid_user}), 400
+            return jsonify({"status": 400, "message": not_valid_user}), 400
         user = User(**new_user)
         user_data.append(user.format_user_record())
         return jsonify({
@@ -36,7 +35,7 @@ class UserController:
             "data": [
                 {
                     "user": user.format_user_record(),
-                    "success": " User registered Successfully"}
+                    "message": " User registered Successfully"}
                     ],
                 }
                 ),201
@@ -44,7 +43,6 @@ class UserController:
 
     def login_user(self):
         login_credentials = json.loads(request.data)
-        response = None
         if not login_credentials:
             return jsonify(
                 {

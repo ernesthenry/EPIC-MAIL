@@ -2,13 +2,14 @@ from flask import jsonify, request, json
 from api.utilities.helpers import token_required, get_current_identity
 from api.utilities.validation import validate_message
 from api.models.message import (
-    user_messages, 
-    Message, 
+    user_messages,
+    Message,
     get_sent_messages,
     get_specific_message,
     delete_from_inbox,
     get_all_received_unread_messages
-) 
+)
+
 
 class MessageController:
 
@@ -35,22 +36,22 @@ class MessageController:
         subject = data.get("subject")
         message = data.get("message")
         duplicate_message = [
-            msg for msg in user_messages if msg["subject"] == subject \
+            msg for msg in user_messages if msg["subject"] == subject
             and msg["message"] == message
-            ]
+        ]
         if duplicate_message:
             return jsonify({
-        "status": 409, 
-        "error": "User already exists"
-        }), 409
+                "status": 409,
+                "error": "User already exists"
+            }), 409
 
         not_valid_message = validate_message(**message_data)
 
         if not_valid_message:
             return jsonify({
-                "status": 400, 
+                "status": 400,
                 "error": "Message arleady sent"
-                }), 400
+            }), 400
 
         new_message = Message(**message_data)
         user_messages.append(new_message.__dict__)
@@ -60,8 +61,8 @@ class MessageController:
                 "data": [
                     {
                         "Message": new_message.__dict__,
-                        }]
-                        }),201
+                    }]
+            }), 201
 
     def fetch_all_sent_messages(self, sender_status):
         all_messages = get_sent_messages(sender_status)
@@ -72,11 +73,11 @@ class MessageController:
                 "data": [message for message in all_messages],
                 "message": "These are your sent messages"
             }), 200
-            
+
         else:
             return jsonify(
-                    {"status": 404, "error": "You have not sent any mail yet."
-                }), 404
+                {"status": 404, "error": "You have not sent any mail yet."
+                 }), 404
 
     def get_message(self, message_id):
         single_message = get_specific_message(int(message_id))
@@ -87,11 +88,10 @@ class MessageController:
                  }), 200
         else:
             return jsonify(
-                    {
-                        "status": 404, 
-                        "error": "Message  does not exist"
-                    }),404
-
+                {
+                    "status": 404,
+                    "error": "Message  does not exist"
+                }), 404
 
     def delete_email(self, message_id):
         """ deleting an email from a user's inbox. """
@@ -107,20 +107,20 @@ class MessageController:
         else:
             return jsonify({
                 "status": 404,
-                 "error": "Message does not exist"
-                 }),404
-
+                "error": "Message does not exist"
+            }), 404
 
     def received_unread_emails(self, receiver_status):
-        received_unread_messages = get_all_received_unread_messages(receiver_status)
+        received_unread_messages = get_all_received_unread_messages(
+            receiver_status)
         if received_unread_messages:
             return jsonify({
                 "status": 200,
                 "data": [unread_message for unread_message in received_unread_messages],
-            }), 200   
+            }), 200
         else:
             return jsonify(
-                    {
-                        "status": 404, 
-                        "error": "No messages in your inbox."
+                {
+                    "status": 404,
+                    "error": "No messages in your inbox."
                 }), 400

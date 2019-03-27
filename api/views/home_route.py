@@ -1,5 +1,3 @@
-
-#api/controllers
 from flask import Blueprint
 from api import create_app
 from api.controllers.home_controller import Home

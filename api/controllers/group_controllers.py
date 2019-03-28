@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import jsonify, request, json
 from api.utilities.validation import validate_group
 from api.controllers.user_controller import db
 from api.utilities.helpers import get_current_identity
@@ -23,7 +23,7 @@ class GroupController():
         }
 
         group_name = data.get("group_name")
-        userid =get_current_identity()
+        # user_id =get_current_identity()
 
         invalid_group = validate_group(**new_group)
         if invalid_group:
@@ -42,8 +42,7 @@ class GroupController():
             return jsonify({
                 "status": 201,
                 "data": [{
-                    "mail": group,
-                    "message": "Group created successfully",
+                    "message": "Group created successfully"
                 }]
             }), 201
         else:
@@ -51,3 +50,36 @@ class GroupController():
                 "status": 409,
                 "error": "The group already exists"
             }), 409
+
+
+    def fetch_single_group(self, group_id):
+        single_group = db.get_specific_group(group_id)
+        if single_group:
+            return jsonify(
+                {"status": 200,
+                 "data": single_group
+                 }), 200
+        else:
+            return jsonify(
+                {
+                    "status": 404,
+                    "error": "Invalid request"
+                }), 404
+
+
+    def fetch_all_groups(self):
+        """ Get all groups. """
+        # login_credentials = json.loads(request.data)
+        # get_user = get_current_identity()
+        # group_id = get_user.get(login_credentials)
+        groups = db.get_all_groups()
+        if groups:
+            return jsonify({
+                "data": [group for group in groups],
+                "status": 200
+            }), 200
+
+        return jsonify({
+            "status": 404,
+            "error": "No user groups yet."
+        }), 404

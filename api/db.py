@@ -97,6 +97,26 @@ class DatabaseConnection:
         self.cursor.execute(query)
         return "Group created succesfully"
 
+    def get_specific_group(self, group_id):
+        """Method for getting  a specific group"""
+        query = "SELECT * FROM groups WHERE group_id='{}' ".format(group_id)
+        self.cursor.execute(query)
+        return self.cursor.fetchone()
+
+    def get_all_groups(self):
+        query = "SELECT * FROM groups;"
+        self.cursor.execute(query)
+        groups = self.cursor.fetchall()
+        return groups
+
+    def update_group_name(self,group_id, group_name):
+        self.cursor.execute(
+            "UPDATE groups SET group_name = %s WHERE group_id = %s",[group_id, group_name]
+        )
+        return "success"
+
+
+
     def check_duplicate_group(self, group_name):
         """
             Check if group already exists

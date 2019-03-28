@@ -2,13 +2,15 @@ import os
 from os import environ
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+postgres_local_base = 'postgresql://postgres:@localhost/'
+database_name = "epicmaildb"
 
 
 class BaseConfig:
     """Base configuration."""
     DEBUG = False
     TESTING = False
-    SECRET_KEY = environ.get("JWT_SECRET_KEY")
+    SECRET_KEY = os.getenv('SECRET_KEY', 'ernest')
 
     @staticmethod
     def init_app(app):

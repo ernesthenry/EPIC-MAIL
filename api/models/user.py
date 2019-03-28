@@ -5,6 +5,7 @@ class User:
     """ model class for users """
 
     def __init__(self, **kwargs):
+        self.userid = kwargs["userid"]
         self.email = kwargs["email"]
         self.firstname = kwargs["firstname"]
         self.lastname = kwargs["lastname"]

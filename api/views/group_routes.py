@@ -19,3 +19,8 @@ def create_group(user):
 def all_groups():
     group_controller.fetch_all_groups()
 
+@group_blueprint.route('/groups/<int:group_id>', methods=['DELETE'])
+def delete_group(group_id):
+    """ 
+    delete a group """
+    return group_controller.delete_group(group_id)

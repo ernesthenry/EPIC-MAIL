@@ -69,9 +69,9 @@ class GroupController():
 
     def fetch_all_groups(self):
         """ Get all groups. """
-        # login_credentials = json.loads(request.data)
-        # get_user = get_current_identity()
-        # group_id = get_user.get(login_credentials)
+        login_credentials = json.loads(request.data)
+        get_user = get_current_identity()
+        group_id = get_user.get(login_credentials)
         groups = db.get_all_groups()
         if groups:
             return jsonify({
@@ -83,3 +83,19 @@ class GroupController():
             "status": 404,
             "error": "No user groups yet."
         }), 404
+
+
+    def delete_group(self, group_id):
+        """delete a group """
+        group_exists = db.group_exists(group_id)
+        if group_exists is None:
+            return jsonify({
+                "error": "Can not delete a non existant endpoint.",
+                "status": 404
+            }), 404
+            
+        db.delete_group(group_id)
+        return jsonify({
+            "status": 200,
+            "message": "Group successfully deleted."
+        }), 200

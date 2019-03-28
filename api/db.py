@@ -97,6 +97,12 @@ class DatabaseConnection:
         self.cursor.execute(query)
         return "Group created succesfully"
 
+    def group_exists(self, group_id):
+        query = "SELECT * FROM groups WHERE group_id='{}';".format(group_id)
+        self.cursor.execute(query)
+        group = self.cursor.fetchone()
+        return group
+
     def get_specific_group(self, group_id):
         """Method for getting  a specific group"""
         query = "SELECT * FROM groups WHERE group_id='{}' ".format(group_id)
@@ -108,6 +114,11 @@ class DatabaseConnection:
         self.cursor.execute(query)
         groups = self.cursor.fetchall()
         return groups
+    
+    def delete_group(self,group_id):
+        query = "DELETE FROM groups WHERE group_id = '{}';".format(group_id)
+        self.cursor.execute(query)
+
 
     def update_group_name(self,group_id, group_name):
         self.cursor.execute(

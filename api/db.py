@@ -2,6 +2,7 @@ import psycopg2
 import psycopg2.extras
 from pprint import pprint
 from datetime import datetime
+from werkzeug.security import generate_password_hash
 
 
 class DatabaseConnection:
@@ -62,6 +63,7 @@ class DatabaseConnection:
         """
         Register a user
         """
+        
         reg_user = "INSERT INTO users(email, firstname, lastname, password) VALUES('{}','{}','{}','{}')".format(
             email, firstname, lastname, password)
         self.cursor.execute(reg_user)

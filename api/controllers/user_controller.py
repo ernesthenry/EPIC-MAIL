@@ -1,8 +1,8 @@
 from flask import jsonify, request, json
-from api.models.user import User, valid_credentials
+from api.models.user import User
 from api.utilities.validation import user_validation
 from api.utilities.helpers import generate_token
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 from api.db import DatabaseConnection
 
 db = DatabaseConnection()
@@ -37,12 +37,12 @@ class UserController:
                     "status": 409,
                     "error": "User already exists"
                 }), 409
-        user = db.register_user(email, firstname, lastname, password)
+
+        db.register_user(email, firstname, lastname, generate_password_hash(password))
         return jsonify({
             "status": 201,
             "data": [
                 {
-                    "user": new_user,
                     "message": " User registered Successfully"}
             ],
         }
@@ -60,24 +60,21 @@ class UserController:
         email = login_credentials.get("email")
         password = login_credentials.get("password")
         user = db.login(email)
-        if user is None:
-            return jsonify({
-                "status": 401,
-                'error': 'User not found'
-            }), 401
-        elif user["email"] and check_password_hash(user["password"], password):
+
+        access_token = generate_token(login_credentials)
+
+        if user["email"] and check_password_hash(user["password"], password):
             return jsonify(
                 {
                     "status": 200,
                     "data": [
                         {
-                            "Token": generate_token(user["email"]),
+                            'access-token': access_token,
                             "Success": "User logged in successfully"
                         }
                     ],
                 }
             ), 200
-
         else:
             return jsonify({
                 "error":

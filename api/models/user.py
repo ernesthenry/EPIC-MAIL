@@ -12,6 +12,7 @@ class User:
 
     def format_user_record(self):
         return {
+
             'email': self.email,
             'firstname': self.firstname,
             'lastname': self.lastname,

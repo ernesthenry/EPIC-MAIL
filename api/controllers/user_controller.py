@@ -38,12 +38,15 @@ class UserController:
                     "error": "User already exists"
                 }), 409
 
+        access_token = generate_token(data)
         db.register_user(email, firstname, lastname, generate_password_hash(password))
         return jsonify({
             "status": 201,
             "data": [
                 {
-                    "message": " User registered Successfully"}
+                    "message": " User registered Successfully",
+                    'access_token': access_token
+                    }
             ],
         }
         ), 201

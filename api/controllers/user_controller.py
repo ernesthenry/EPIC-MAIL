@@ -1,7 +1,11 @@
 from flask import jsonify, request, json
-from api.models.user import user_data, User, valid_credentials
+from api.models.user import User, valid_credentials
 from api.utilities.validation import user_validation
 from api.utilities.helpers import generate_token
+from werkzeug.security import check_password_hash
+from api.db import DatabaseConnection
+
+db = DatabaseConnection()
 
 
 class UserController:
@@ -20,21 +24,25 @@ class UserController:
             "password": data.get("password")
         }
         email = data.get("email")
-        already_user = [user for user in user_data if user['email'] ==
-                        email
-                        ]
-        if already_user:
-            return jsonify({"status": 409, "error": "User already exists"}), 409
+        firstname = data.get("firstname")
+        lastname = data.get("lastname")
+        password = data.get("password")
+
         not_valid_user = user_validation(**new_user)
         if not_valid_user:
             return jsonify({"status": 400, "message": not_valid_user}), 400
-        user = User(**new_user)
-        user_data.append(user.format_user_record())
+        if db.check_email(email):
+            return jsonify(
+                {
+                    "status": 409,
+                    "error": "User already exists"
+                }), 409
+        user = db.register_user(email, firstname, lastname, password)
         return jsonify({
             "status": 201,
             "data": [
                 {
-                    "user": user.format_user_record(),
+                    "user": new_user,
                     "message": " User registered Successfully"}
             ],
         }
@@ -48,17 +56,22 @@ class UserController:
                     "status": 400,
                     "error": "Couldn't find your account"
                 }), 400
+
         email = login_credentials.get("email")
         password = login_credentials.get("password")
-
-        userid = valid_credentials(email, password)
-        if userid:
+        user = db.login(email)
+        if user is None:
+            return jsonify({
+                "status": 401,
+                'error': 'User not found'
+            }), 401
+        elif user["email"] and check_password_hash(user["password"], password):
             return jsonify(
                 {
                     "status": 200,
                     "data": [
                         {
-                            "Token": generate_token(userid),
+                            "Token": generate_token(user["email"]),
                             "Success": "User logged in successfully"
                         }
                     ],

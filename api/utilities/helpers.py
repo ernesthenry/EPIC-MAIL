@@ -4,7 +4,6 @@ from flask import jsonify, request
 import jwt
 from os import environ
 from functools import wraps
-from api.models.user import user_data
 
 
 secret_key = environ.get("SECRET_KEY", "epicmail-reloaded")

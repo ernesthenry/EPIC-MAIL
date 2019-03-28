@@ -4,20 +4,19 @@ from flask import jsonify, request
 import jwt
 from os import environ
 from functools import wraps
-from api.models.user import user_data
 
 
 secret_key = environ.get("SECRET_KEY", "epicmail-reloaded")
 
 
-def generate_token(user, isAdmin=False):
+def generate_token(user):
     try:
         # set up a payload with an expiration time
         payload = {
             'exp': datetime.utcnow() + timedelta(minutes=60),
             'iat': datetime.utcnow(),
             'userid': user['email'],
-            "isAdmin": isAdmin
+
         }
         # create the byte string token using the payload and the SECRET key
         jwt_string = jwt.encode(payload, secret_key,

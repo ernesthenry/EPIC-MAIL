@@ -4,6 +4,7 @@ from api.utilities.validation import user_validation
 from api.utilities.helpers import generate_token
 from werkzeug.security import check_password_hash, generate_password_hash
 from api.db import DatabaseConnection
+from flask_jwt_extended import create_access_token
 
 db = DatabaseConnection()
 
@@ -38,7 +39,7 @@ class UserController:
                     "error": "User already exists"
                 }), 409
 
-        access_token = generate_token(data)
+        access_token = create_access_token(identity=data)
         db.register_user(email, firstname, lastname, generate_password_hash(password))
         return jsonify({
             "status": 201,
@@ -64,8 +65,7 @@ class UserController:
         password = login_credentials.get("password")
         user = db.login(email)
 
-        access_token = generate_token(login_credentials)
-
+        access_token = create_access_token(identity=login_credentials)
         if user["email"] and check_password_hash(user["password"], password):
             return jsonify(
                 {

@@ -4,20 +4,19 @@ from flask import jsonify, request
 import jwt
 from os import environ
 from functools import wraps
-from api.models.user import user_data
-
+import time
 
 secret_key = environ.get("SECRET_KEY", "epicmail-reloaded")
 
 
-def generate_token(user, isAdmin=False):
+def generate_token(user):
     try:
         # set up a payload with an expiration time
         payload = {
             'exp': datetime.utcnow() + timedelta(minutes=60),
             'iat': datetime.utcnow(),
             'userid': user['email'],
-            "isAdmin": isAdmin
+
         }
         # create the byte string token using the payload and the SECRET key
         jwt_string = jwt.encode(payload, secret_key,
@@ -37,14 +36,19 @@ def decode_token(token):
         return payload['userid']
     except jwt.ExpiredSignatureError:
         # the token is expired, return an error string
-        return "Expired token. Please login to get a new token"
+        return  jsonify(
+            {
+                "Message": "Expired token. Please login to get a new token"
+        })
     except jwt.InvalidTokenError:
         # the token is invalid, return an error string
-        return "Invalid token. Please register or login"
+        return  jsonify({
+            "Message": "Invalid token. Please register or login"
+        })
 
 
 def extract_token_from_header():
-    """Get token fromm the headers"""
+    """Get token from the headers"""
     authorization_header = request.headers.get("Authorization")
     if not authorization_header or "Bearer" not in authorization_header:
         return jsonify({
@@ -52,6 +56,7 @@ def extract_token_from_header():
             "status": 400
         })
     token = authorization_header.split(" ")[1]
+  
     return token
 
 
@@ -59,10 +64,10 @@ def token_required(func):
     """Only requests with Authorization headers required"""
     @wraps(func)
     def wrapper(*args, **kwargs):
-        response = None
         try:
             extract_token_from_header()
-            response = func(*args, **kwargs)
+            user=decode_token(extract_token_from_header())
+          
         except jwt.ExpiredSignatureError:
             response = jsonify({
                 "error": "Your token expired",
@@ -73,7 +78,8 @@ def token_required(func):
                 "error": "Invalid token",
                 "status": 401
             }), 401
-        return response
+       
+        return func(user, *args, **kwargs)
     return wrapper
 
 

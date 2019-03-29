@@ -1,3 +1,4 @@
+from flask import jsonify
 import re
 
 
@@ -79,3 +80,12 @@ def validate_sentence(sentence):
     if sentence.isdigit():
         error = "Field cannot be a number"
     return error
+
+def validate_group(**kwargs):
+    errors = {}
+    errors["group_name"] = validate_sentence(kwargs.get("group_name"))
+    not_valid = {key: value for key, value in errors.items() if value}
+    if not_valid:
+        return (jsonify({"status": 400, "error": not_valid}), 400)
+    return None
+

@@ -1,5 +1,6 @@
 import psycopg2
 import psycopg2.extras
+from flask import jsonify
 from pprint import pprint
 from datetime import datetime
 from werkzeug.security import generate_password_hash
@@ -109,6 +110,12 @@ class DatabaseConnection:
         self.cursor.execute(query)
         return self.cursor.fetchone()
 
+    def return_group(self, group_id):
+        """Method for getting  a specific group"""
+        query = "SELECT * FROM groups WHERE group_id='{}' ".format(group_id)
+        self.cursor.execute(query)
+        return self.cursor.fetchone()
+
     def get_all_groups(self):
         query = "SELECT * FROM groups;"
         self.cursor.execute(query)
@@ -122,10 +129,9 @@ class DatabaseConnection:
 
     def update_group_name(self,group_id, group_name):
         self.cursor.execute(
-            "UPDATE groups SET group_name = %s WHERE group_id = %s",[group_id, group_name]
+            "UPDATE groups SET group_name = '{}' WHERE group_id = '{}';".format(group_id,group_name)
         )
         return "success"
-
 
 
     def check_duplicate_group(self, group_name):

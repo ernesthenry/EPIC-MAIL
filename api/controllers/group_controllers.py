@@ -1,7 +1,9 @@
 from flask import jsonify, request, json
 from api.utilities.validation import validate_group
 from api.controllers.user_controller import db
+from api.models.group import Group
 from api.utilities.helpers import get_current_identity
+from api.utilities.validation import validate_name
 
 
 class GroupController():
@@ -23,7 +25,6 @@ class GroupController():
         }
 
         group_name = data.get("group_name")
-        # user_id =get_current_identity()
 
         invalid_group = validate_group(**new_group)
         if invalid_group:
@@ -59,32 +60,18 @@ class GroupController():
                 {"status": 200,
                  "data": single_group
                  }), 200
-        else:
-            return jsonify(
+        return jsonify(
                 {
                     "status": 404,
-                    "error": "Invalid request"
+                    "error": "The record with such id does not exist"
                 }), 404
 
 
     def fetch_all_groups(self):
         """ Get all groups. """
-        login_credentials = json.loads(request.data)
-        get_user = get_current_identity()
-        group_id = get_user.get(login_credentials)
         groups = db.get_all_groups()
-        if groups:
-            return jsonify({
-                "data": [group for group in groups],
-                "status": 200
-            }), 200
-
-        return jsonify({
-            "status": 404,
-            "error": "No user groups yet."
-        }), 404
-
-
+        return jsonify(groups)
+    
     def delete_group(self, group_id):
         """delete a group """
         group_exists = db.group_exists(group_id)
@@ -99,3 +86,28 @@ class GroupController():
             "status": 200,
             "message": "Group successfully deleted."
         }), 200
+
+    def edit_group_name(self, group_id,group_name):
+        """
+        Update group name.
+        """
+        group = db.update_group_name(group_id, group_name)
+
+        if group is None:
+            return jsonify({
+                "error": "You can not update the name of a non existant group.",
+                "status": 404
+            }), 404
+
+        new_group_name = request.get_json()
+
+        name = new_group_name.get("group_name")
+
+        invalid_name = validate_name(name)
+        if invalid_name is False:
+            return jsonify({
+                "error": "Invalid new group name.",
+                "status": 400
+            }), 400
+
+        return jsonify(group)

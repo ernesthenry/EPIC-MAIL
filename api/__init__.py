@@ -6,8 +6,8 @@ from api.views.group_routes import group_blueprint
 
 def create_app():
     app = Flask(__name__)
-    app.register_blueprint(user_blueprint, url_prefix="/api/v1")
-    app.register_blueprint(message_bp, url_prefix="/api/v1" )
-    app.register_blueprint(group_blueprint, url_prefix="/api/v1" )
+    app.register_blueprint(user_blueprint, url_prefix="/api/v2")
+    app.register_blueprint(message_bp, url_prefix="/api/v2" )
+    app.register_blueprint(group_blueprint, url_prefix="/api/v2" )
 
     return app
